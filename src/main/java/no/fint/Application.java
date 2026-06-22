@@ -1,6 +1,5 @@
 package no.fint;
 
-import com.github.springfox.loader.EnableSpringfox;
 import no.fint.sse.oauth.OAuthConfig;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +9,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.security.Security;
 
-@EnableSpringfox
 @EnableScheduling
 @Import(OAuthConfig.class)
 @SpringBootApplication

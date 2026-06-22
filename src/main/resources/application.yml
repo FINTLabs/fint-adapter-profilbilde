@@ -1,9 +1,10 @@
 server:
   port: 8091
 
-springfox:
-  title: '@title@'
-  version: '@version@'
+springdoc:
+  info:
+    title: '@title@'
+    version: '@version@'
 
 base-url: https://beta.felleskomponent.no/profilbilde/provider
 fint:
@@ -12,6 +13,9 @@ fint:
     sse-endpoint: ${base-url}/sse/%s
     status-endpoint: ${base-url}/status
     response-endpoint: ${base-url}/response
+    profilbilde:
+      basedir: /images
+      root: http://localhost:8091
 
   oauth:
     enabled: true

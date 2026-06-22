@@ -4,7 +4,7 @@ import no.fint.model.profilbilde.ProfilbildeActions;
 import no.fint.provider.adapter.AbstractSupportedActions;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class SupportedActions extends AbstractSupportedActions {

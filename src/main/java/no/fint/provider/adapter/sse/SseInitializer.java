@@ -1,6 +1,5 @@
 package no.fint.provider.adapter.sse;
 
-import com.google.common.collect.ImmutableMap;
 import lombok.Getter;
 import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,7 +53,7 @@ public class SseInitializer {
         Arrays.asList(props.getOrganizations()).forEach(orgId -> {
             FintSse fintSse = new FintSse(props.getSseEndpoint(), tokenService, config);
             FintEventListener fintEventListener = new FintEventListener(eventHandlerService);
-            fintSse.connect(fintEventListener, ImmutableMap.of(HeaderConstants.ORG_ID, orgId));
+            fintSse.connect(fintEventListener, Map.of(HeaderConstants.ORG_ID, orgId));
             sseClients.add(fintSse);
         });
     }
