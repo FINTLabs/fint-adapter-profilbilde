@@ -2,8 +2,9 @@
 
 ## Releases
 
-Publish a GitHub release with a tag such as `v1.2.3`. GitHub Actions automatically
-builds, tests, and publishes version `1.2.3` to [Reposilite](https://repo.fintlabs.no/releases).
+Run **CD** from GitHub Actions and enter the app version and information model
+version. This builds, tests, and publishes a Docker image to GHCR, for example
+`ghcr.io/fintlabs/fint-adapter-profilbilde:1.0.0-3.21.12`.
 
 See the [workflow](.github/workflows/publish.yml) for details.
 

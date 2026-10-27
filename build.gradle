@@ -16,31 +16,8 @@ plugins {
 
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'maven-publish'
+apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
-
-group = 'no.fintlabs'
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            name = 'reposilite'
-            url = 'https://repo.fintlabs.no/releases'
-            credentials {
-                username = System.getenv('REPOSILITE_USERNAME')
-                password = System.getenv('REPOSILITE_PASSWORD')
-            }
-            authentication {
-                basic(BasicAuthentication)
-            }
-        }
-    }
-}
 
 javadoc {
     source = sourceSets.main.allJava

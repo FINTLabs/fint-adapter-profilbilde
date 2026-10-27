@@ -2,7 +2,8 @@ FROM eclipse-temurin:8-jdk-noble AS builder
 WORKDIR /home/gradle
 COPY . .
 ARG apiVersion
-RUN sh ./gradlew --no-daemon -PapiVersion=${apiVersion} build
+ARG version=0.0.1-SNAPSHOT
+RUN sh ./gradlew --no-daemon "-PapiVersion=${apiVersion}" "-Pversion=${version}" build
 
 FROM eclipse-temurin:8-noble
 ENV JAVA_TOOL_OPTIONS=-XX:+ExitOnOutOfMemoryError
