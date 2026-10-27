@@ -1,5 +1,12 @@
 # FINT Profilbilde Adapter
 
+## Releases
+
+Publish a GitHub release with a tag such as `v1.2.3`. GitHub Actions automatically
+builds, tests, and publishes version `1.2.3` to [Reposilite](https://repo.fintlabs.no/releases).
+
+See the [workflow](.github/workflows/publish.yml) for details.
+
 ## Adapter configuration
 | Key | Description | Example |
 |-----|-------------|---------|
