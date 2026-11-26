@@ -1,0 +1,28 @@
+# Dependabot is on for this repo. It opens no pull requests for version updates
+# (open-pull-requests-limit: 0), because version changes in Core 1 go through the release script.
+# Security updates can still open pull requests.
+version: 2
+registries:
+  fintlabs:
+    type: maven-repository
+    url: https://repo.fintlabs.no/releases
+updates:
+  - package-ecosystem: "gradle"
+    registries:
+      - fintlabs
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
